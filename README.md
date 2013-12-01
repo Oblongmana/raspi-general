@@ -5,9 +5,10 @@ Aim: without using a graphical interface (other than on OSX to get the Raspbian 
 ## Gear
 
  1. Raspberry Pi (Model B)
- 2. Ethernet cable (+ internet connection, obviously?)
- 3. Cirago Bluetooth/WiFi dongle
- 4. MicroUSB cable + wall charger
+ 2. SD Card (Get a Class 10, you won't regret it. You will regret it if you get a lower class.) (4gb+ ideally)
+ 3. Ethernet cable (+ internet connection, obviously?)
+ 4. Cirago Bluetooth/WiFi dongle
+ 5. MicroUSB cable + wall charger
 
 ## Initial setup
 
@@ -23,18 +24,19 @@ Aim: without using a graphical interface (other than on OSX to get the Raspbian 
 
  1. Plug SD Card in
  2. Plug ethernet in
- 3. Use whatever magic you need to use to find out IP address for RasPi (e.g. log into router and view ARP table)
- 4. `ssh pi@[ip.add.re.ss]`: default password is raspberry
- 5. `sudo raspi-config`
- 6. Do whatever you need to do to expand the root filesystem (look for something like `expand_rootfs` - may vary depending on version of raspbian)
- 7. Do other fun things like change your timezone, and your password
- 8. Exit config
- 9. Reboot (you should get prompted - if not, type `reboot` at the prompt)
- 10. Once rebooted, `ssh pi@[ip.add.re.ss]`
- 11. `sudo apt-get update`
- 12. `sudo apt-get dist-upgrade`, or just `upgrade` if you know the difference between the two and prefer using `upgrade` rather than `dist-upgrade`
- 13. `sudo sync`
- 14. `reboot`
+ 3. Plug power in
+ 4. Use whatever magic you need to use to find out IP address for RasPi (e.g. log into router and view ARP table)
+ 5. `ssh pi@[ip.add.re.ss]`: default password is raspberry
+ 6. `sudo raspi-config`
+ 7. Do whatever you need to do to expand the root filesystem (look for something like `expand_rootfs` - may vary depending on version of raspbian)
+ 8. Do other fun things like change your timezone, and your password
+ 9. Exit config
+ 10. Reboot (you should get prompted - if not, type `reboot` at the prompt)
+ 11. Once rebooted, `ssh pi@[ip.add.re.ss]`
+ 12. `sudo apt-get update`
+ 13. `sudo apt-get dist-upgrade`, or just `upgrade` if you know the difference between the two and prefer using `upgrade` rather than `dist-upgrade`
+ 14. `sudo sync`
+ 15. `reboot`
 
 ### Bluetooth setup
 
@@ -78,3 +80,7 @@ Aim: without using a graphical interface (other than on OSX to get the Raspbian 
  17. SSH in
  18. Have a beer or other refreshing drink
  19. If it still doesn't work, sorry, I don't have any other ideas for you off the top of my head :(
+
+### Misc connectivity
+
+ - I found I could onyl ping ip addresses, no DNS - fix this (hopefully) by doing `sudo nano /etc/resolv.conf` and (assuming it's not there already) adding the line `nameserver 192.168.1.1` - or whatever your router gateway address is. Or some other dns server
