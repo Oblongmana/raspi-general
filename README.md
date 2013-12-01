@@ -57,9 +57,13 @@ Aim: without using a graphical interface (other than on OSX to get the Raspbian 
  6. Using up and down, highlight your network, then use the right arrow key
  7. Navigate to "Use Static IPs" section and press [Enter]
  8. Complete the following
-     IP Address: [SOMETHING APPROPRIATE FOR YOUR NETWORK, e.g. 192.168.1.222]
-     Netmask: 255.255.255.0
-     Gateway: 192.168.1.1
+ 
+    ```
+    IP Address: [SOMETHING APPROPRIATE FOR YOUR NETWORK, e.g. 192.168.1.222]
+    Netmask: 255.255.255.0
+    Gateway: 192.168.1.1
+    ```
+
  9. Navigate to "Use global DNS servers" and press [Enter]
  7. Navigate to "Automatically connect to this network" and press [Enter]
  8. Navigate to "Key" and enter in your network passphrase
